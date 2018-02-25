@@ -1,0 +1,25 @@
+<!-- What to Wear component Partial -->
+<form ng-submit="$ctrl.outputSuggestion()">
+<h1>What to Wear?</h1>
+<div >
+    <h2>Temperature</h2>
+    <input type="text" ng-model="$ctrl.suggestion.temperature">
+</div>
+
+<!-- <div>
+    <h2>Event</h2>
+    <select>
+        <option>Casual</option>
+        <option>Formal</option>
+        <option>Semi-Formal</option>
+    </select>
+</div> -->
+
+
+<button type ="submit" >What to Wear?</button>
+</form>
+
+
+<div>
+<h2 ng-model="$ctrl.suggestions">{{suggestions}}</h2>
+</div>
