@@ -1,0 +1,10 @@
+<input type="text" placeholder=" Filter your to-dos" ng-model="search">
+<ol>
+
+    <li hover-state ng-repeat="taskList in $ctrl.taskList | filter:search track by $index ">{{taskList.name}}
+        <i class="material-icons" class="cancel" ng-click="$ctrl.removeTask($index)">close</i>
+    </li>
+
+</ol>
+<input id="addInput" type="text" placeholder=" Add your to do" ng-model="$ctrl.task">
+<button class="addTask" ng-click="$ctrl.addTask($ctrl.task);">Add</button><button class="addTask" ng-click="$ctrl.addTask($ctrl.task);">Add</button>

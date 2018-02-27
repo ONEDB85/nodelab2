@@ -1,0 +1,105 @@
+body {
+    background: linear-gradient(to right, #f857a6, #ff5858);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    background-color: white;
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 30px 20px 30px;
+    border-radius: 5px;
+}
+
+.addTask {
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 15px;
+    color: white;
+    background-color:#ff0000;
+    border: none;
+    height: 35px;
+    opacity: 0.4;
+    border-radius: 5px;
+}
+
+.addTask:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.material-icons {
+    float: right;
+    clear: right;
+    font-size: 14px !important;
+    cursor: pointer;
+}
+
+.material-icons:hover {
+    color: red;
+}
+
+li {
+    padding-bottom: 15px;
+}
+
+h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.welcome{
+    margin-top: 20px;
+}
+
+p {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+input {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    height: 30px;
+    border-color: 1px solid #eee;
+    opacity: 0.6;
+    width: 95%;
+}
+
+input:hover {
+    border-color: 1px solid black;
+    opacity: 1;
+}
+
+.enter{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 14px;
+
+}
+
+.back{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding-top: 20px;
+}
+
+a {
+color:#ff69b4;
+text-decoration: none;
+opacity: .4;
+
+}
+a:hover {
+    opacity: 1;
+    }
+    
