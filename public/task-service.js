@@ -12,7 +12,7 @@
         function getTasks() {
             return $http({
                 method: "GET",
-                url: "http://localhost:3000/tasks/"
+                url: "/tasks"
             }).then(function(response) {
                 return response.task;
             });
@@ -21,15 +21,15 @@
         function addTask(task) {
             return $http({
                 method: "POST",
-                url: "http://localhost:3000/tasks/",
-                name: task
+                url: "/tasks",
+                name: {task : task}
             });
         };
         
         function deleteTask(taskId) {
             return $http({
                 method: "DELETE",
-                url: "http://localhost:3000/tasks/" + taskId
+                url: "/tasks" + taskId
             });
         };
 

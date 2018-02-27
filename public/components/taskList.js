@@ -28,7 +28,8 @@
     
             function loadForm() {
                 TaskService.getTasks().then(function(tasks) {
-                    $ctrl.tasks = tasks;
+                   // $ctrl.tasks = tasks;
+                    console.log(tasks);
                 });
             }
 
