@@ -6,6 +6,7 @@
         this.getTasks = getTasks;
         this.addTask = addTask;
         this.deleteTask = deleteTask;
+        this.updateTask = updateTask;
         // this.setData = setData;
         // this.getData = getData;
 
@@ -14,7 +15,8 @@
                 method: "GET",
                 url: "/tasks"
             }).then(function(response) {
-                return response.task;
+                // console.log(response.data);
+                return response.data;
             });
         };
 
@@ -22,30 +24,28 @@
             return $http({
                 method: "POST",
                 url: "/tasks",
-                name: {task : task}
+                data: task
             });
         };
         
         function deleteTask(taskId) {
             return $http({
                 method: "DELETE",
-                url: "/tasks" + taskId
+                url: "/tasks/" + taskId
             });
         };
 
+        function updateTask(task) {
+            console.log(task);
+            return $http({
+                method: "PUT",
+                url: "/tasks/" + task.id,
+                data: task
+            }).then((response) => { return response.data });
+        };
 
-        // return {
-        //     setData: setData,
-        //     getData: getData
-        // }
 
-        // function getData() {
-        //     return taskList;
-        // }
-
-        // function setData(list) {
-        //     taskList = list;
-        // }
+ 
     }
     angular
         .module("app")

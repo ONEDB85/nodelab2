@@ -30,6 +30,19 @@ body {
     border-radius: 5px;
 }
 
+.editTask {
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 15px;
+    color: white;
+    background-color:#ff0000;
+    border: none;
+    height: 35px;
+    opacity: 0.4;
+    border-radius: 5px;
+}
+
+
 .addTask:hover {
     opacity: 1;
     cursor: pointer;
@@ -46,8 +59,9 @@ body {
     color: red;
 }
 
+
 li {
-    padding-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 h1 {

@@ -6,49 +6,58 @@
 
         controller: function (TaskService) {
 
-            var $ctrl = this;
-            
-            // Start the form off empty on page load.
+            const $ctrl = this;
             $ctrl.taskList = [];
-    
-            // Load the cart data on page load.
             loadForm();
-    
+
             // Function on scope called when form is submitted.
-            $ctrl.addTask = function(task) {
-                TaskService.addTask(task).then(loadForm);
-                console.log(task);
-                console.log($ctrl.taskList);
+
+            $ctrl.addTask = function (task) {
+                var thisTask = {
+                    task: task
+                }
+                
+                if ($ctrl.task) {
+                    $ctrl.task = "";
+                    
+            
+                    TaskService.addTask(thisTask).then(function (task) {
+
+                        loadForm();
+                    });
+                    
+                }
+            }
+            // Function on scope called when  // 
+            $ctrl.deleteTask = (task) => {
+                TaskService.deleteTask(task.id).then((response) => {
+                    $ctrl.taskList = response.data;
+                });
+                
             };
-    
-            // Function on scope called when clicking Delete for an item.
-            $ctrl.deleteTask = function(task) {
-                TaskService.deleteTask(task.id).then(loadForm);
+
+
+            $ctrl.updateTask = (task) => {
+                // task.task = editInput.value;
+                TaskService.updateTask(task).then((response) => {
+                    console.log(response);
+                //  $ctrl.taskList = response.data;   
+                });
+                
+                $ctrl.task = "";
+                // return $ctrl.taskList = task;
             };
-    
+
+
             function loadForm() {
-                TaskService.getTasks().then(function(tasks) {
-                   // $ctrl.tasks = tasks;
-                    console.log(tasks);
+                TaskService.getTasks().then(function (tasks) {
+                    $ctrl.taskList = tasks;
+                    
+                    // console.log($ctrl.taskList);
                 });
             }
 
-            // var $ctrl = this;
-            // $ctrl.addTask = function (task) {
 
-            //     if (task) {
-            //         $ctrl.taskList.push({
-            //             name: task
-            //         });
-            //         $ctrl.task = "";
-            //     };
-
-            // }
-            // $ctrl.removeTask = function ($index) {
-            //     $ctrl.taskList.splice($index, 1);
-            // };
-
-            // $ctrl.taskList = TaskService.getData();
         }
     }
 
